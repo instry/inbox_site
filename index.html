@@ -511,7 +511,7 @@
             </div>
             <div class="slide-content scene-flex">
                 <div class="scene-left">
-                    <h3 class="scene-headline">唤醒沉睡文<br>挖掘商业智能</h3>
+                    <h3 class="scene-headline">唤醒沉睡文档<br>挖掘商业智能</h3>
                     <ul class="scene-features">
                         <li><strong>数据主权</strong>本地离线运行，物理隔绝风险</li>
                         <li><strong>万能解析</strong>PDF / Excel / Word → 结构化知识</li>
@@ -657,17 +657,11 @@
             </div>
             <div class="slide-content scene-flex">
                 <div class="scene-left">
-                    <div class="scene-capability">
-                        <span class="cap-badge">核心能力</span>
-                        <span class="cap-text">多渠道响应 + 情绪感知</span>
-                    </div>
-                    <div class="scene-desc">
-                        <p>接入企微/公众号后台，7×24 秒级响应客户咨询，学习金牌话术，智能流转人工。</p>
-                    </div>
+                    <h3 class="scene-headline">7×24 在线<br>AI 金牌销售</h3>
                     <ul class="scene-features">
-                        <li><strong>秒级响应：</strong>凌晨 2 点的咨询、周末的售后投诉，3 秒内专业回复</li>
-                        <li><strong>金牌话术：</strong>学习销冠经验，巧妙化解异议，推动成单</li>
-                        <li><strong>智能流转：</strong>检测到强意向或情绪激动时，自动摘要转接人工客服</li>
+                        <li><strong>秒级响应</strong>凌晨咨询也能 3 秒回复</li>
+                        <li><strong>情绪感知</strong>实时分析客户意向与情绪</li>
+                        <li><strong>智能流转</strong>强意向自动转接人工成单</li>
                     </ul>
                 </div>
                 <div class="scene-right">
@@ -678,22 +672,59 @@
                             <div class="cs-channel-tab">小程序</div>
                         </div>
                         <div class="cs-chat-body">
-                            <div class="chat-bubble user anim-cs-1">"这个价格太贵了，能便宜点吗？"</div>
+                            <!-- 时间戳：深夜场景 -->
+                            <div class="chat-time-sep anim-cs-0">—— 周六 凌晨 01:47 ——</div>
+
+                            <!-- 1. 客户深夜咨询 -->
+                            <div class="chat-bubble user anim-cs-1">"你们的企业版方案具体包含什么？多少钱？"</div>
+
+                            <!-- 2. AI 秒级响应 -->
                             <div class="chat-bubble bot anim-cs-2">
                                 <div class="typing-indicator"><span></span><span></span><span></span></div>
-                                <div class="typed-text">理解您的顾虑！这个价格包含了全年运维和升级服务。同类产品年费通常在 8-15 万，我们的方案其实更具性价比。</div>
+                                <div class="typed-text">您好！企业版包含：AI 一体机 + Instry 系统永久授权 + 50+ 连接器 + 首年运维。基础方案 15-25 万，根据团队规模定制。</div>
                             </div>
-                            <div class="chat-bubble user anim-cs-3">"那我再考虑考虑..."</div>
+
+                            <!-- 3. 客户嫌贵 -->
+                            <div class="chat-bubble user anim-cs-3">"太贵了吧，能便宜点吗？"</div>
+
+                            <!-- 4. 情绪检测 -->
                             <div class="cs-emotion-bar anim-cs-4">
                                 <div class="emotion-tag">
-                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
-                                    情绪：犹豫中
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M16 16s-1.5-2-4-2-4 2-4 2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                                    情绪：价格抗拒
                                 </div>
-                                <div class="emotion-action">→ 推送限时优惠</div>
+                                <div class="emotion-action">→ 启用价值锚定话术</div>
                             </div>
-                            <div class="chat-bubble bot highlight-msg anim-cs-5">
-                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                                <span>本周签约可享 9 折优惠 + 免费定制一个专属 Skill，需要我为您锁定优惠吗？</span>
+
+                            <!-- 5. AI 金牌话术化解异议 -->
+                            <div class="chat-bubble bot anim-cs-5">
+                                <div class="typed-text">理解您的顾虑！帮您算一笔账：一个客服专员年薪约 8 万，我们的方案相当于 <strong>不到 2 个员工</strong> 的成本，却能 7×24 覆盖客服+行政+数据分析。大部分客户 <strong>6 个月回本</strong>。</div>
+                            </div>
+
+                            <!-- 6. 客户态度转变 -->
+                            <div class="chat-bubble user anim-cs-6">"这样算确实还行... 能安排一个详细的演示吗？"</div>
+
+                            <!-- 7. 意向升级检测 -->
+                            <div class="cs-emotion-bar emotion-hot anim-cs-7">
+                                <div class="emotion-tag hot">
+                                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                    强意向信号
+                                </div>
+                                <div class="emotion-action hot">→ 自动转接销售经理</div>
+                            </div>
+
+                            <!-- 8. 自动生成摘要并转接 -->
+                            <div class="cs-handoff-card anim-cs-8">
+                                <div class="handoff-header">
+                                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                    已转接 · 销售经理 张总
+                                </div>
+                                <div class="handoff-summary">
+                                    <div class="handoff-label">AI 自动生成摘要：</div>
+                                    <div class="handoff-item"><span class="hs-tag">客户</span>对企业版感兴趣，预算敏感</div>
+                                    <div class="handoff-item"><span class="hs-tag">意向</span>已认可性价比，要求产品演示</div>
+                                    <div class="handoff-item"><span class="hs-tag">建议</span>推荐基础版 + 首月免费试用</div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -708,58 +739,114 @@
             </div>
             <div class="slide-content scene-flex">
                 <div class="scene-left">
-                    <div class="scene-capability">
-                        <span class="cap-badge">核心能力</span>
-                        <span class="cap-text">订单驱动 + 自动规划</span>
-                    </div>
-                    <div class="scene-desc">
-                        <p>销售下单瞬间，Agent 自动拉取 BOM 信息，核对库存产能，生成完整执行方案。</p>
-                    </div>
+                    <h3 class="scene-headline">订单即排产<br>急单不慌乱</h3>
                     <ul class="scene-features">
-                        <li><strong>订单即排班：</strong>自动生成生产工单 + 物料领用单 + 人员排班表</li>
-                        <li><strong>柔性插单：</strong>急单插入时瞬间重算全厂优先级，成本最低、延期最少</li>
-                        <li><strong>智能预警：</strong>库存不足、产能瓶颈提前预警，杜绝停产风险</li>
+                        <li><strong>秒级排产</strong>下单即生成完整执行方案</li>
+                        <li><strong>柔性插单</strong>急单插入自动重算全厂</li>
+                        <li><strong>智能预警</strong>库存不足提前触发采购</li>
                     </ul>
                 </div>
                 <div class="scene-right">
-                    <div class="anim-gantt-demo">
-                        <div class="gantt-mini-header">
-                            <span class="gantt-mini-title">排产看板</span>
-                            <div class="gantt-mini-days">
-                                <span>周一</span><span>周二</span><span>周三</span><span>周四</span><span>周五</span>
+                    <div class="factory-demo">
+                        <!-- Act 1: 销售下单触发 -->
+                        <div class="factory-trigger anim-ft-trigger">
+                            <div class="ft-icon">
+                                <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
+                            <div class="ft-body">
+                                <span class="ft-from">销售部 · 王经理</span>
+                                <span class="ft-msg">新订单 #1026：A 产品 500 件，客户要求周五前交货</span>
                             </div>
                         </div>
-                        <div class="gantt-mini-row anim-gantt-1">
-                            <span class="gantt-mini-label">产线 A</span>
-                            <div class="gantt-mini-track">
-                                <div class="gantt-mini-bar bar-normal" style="left: 2%; width: 52%;">#1021</div>
-                                <div class="gantt-mini-bar bar-normal" style="left: 58%; width: 40%;">#1023</div>
+
+                        <!-- Act 2: AI 分析检查 -->
+                        <div class="factory-checks anim-ft-checks">
+                            <div class="fc-item anim-fc-1">
+                                <span class="fc-dot ok"></span>
+                                <span class="fc-label">BOM 核对</span>
+                                <span class="fc-val ok">物料齐全</span>
+                            </div>
+                            <div class="fc-item anim-fc-2">
+                                <span class="fc-dot warn"></span>
+                                <span class="fc-label">库存检查</span>
+                                <span class="fc-val warn">螺丝 M6 仅余 200</span>
+                            </div>
+                            <div class="fc-item anim-fc-3">
+                                <span class="fc-dot ok"></span>
+                                <span class="fc-label">产能评估</span>
+                                <span class="fc-val ok">产线 B 可排入</span>
                             </div>
                         </div>
-                        <div class="gantt-mini-row anim-gantt-2">
-                            <span class="gantt-mini-label">产线 B</span>
-                            <div class="gantt-mini-track">
-                                <div class="gantt-mini-bar bar-normal bar-shift" style="left: 2%; width: 33%;">#1022</div>
-                                <div class="gantt-mini-bar bar-urgent bar-insert" style="left: 38%; width: 28%;">
-                                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                                    急单
+
+                        <!-- Act 3: 排产甘特图 -->
+                        <div class="anim-gantt-demo anim-ft-gantt">
+                            <div class="gantt-mini-header">
+                                <span class="gantt-mini-title">排产看板</span>
+                                <div class="gantt-mini-days">
+                                    <span>周一</span><span>周二</span><span>周三</span><span>周四</span><span>周五</span>
                                 </div>
-                                <div class="gantt-mini-bar bar-shifted" style="left: 70%; width: 28%;">→#1022</div>
+                            </div>
+                            <div class="gantt-mini-row">
+                                <span class="gantt-mini-label">产线 A</span>
+                                <div class="gantt-mini-track">
+                                    <div class="gantt-mini-bar bar-normal" style="left: 2%; width: 52%;">#1021</div>
+                                    <div class="gantt-mini-bar bar-normal" style="left: 58%; width: 40%;">#1023</div>
+                                </div>
+                            </div>
+                            <div class="gantt-mini-row">
+                                <span class="gantt-mini-label">产线 B</span>
+                                <div class="gantt-mini-track">
+                                    <div class="gantt-mini-bar bar-normal bar-shift" style="left: 2%; width: 33%;">#1022</div>
+                                    <div class="gantt-mini-bar bar-urgent bar-insert" style="left: 38%; width: 28%;">
+                                        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                        #1026
+                                    </div>
+                                    <div class="gantt-mini-bar bar-shifted" style="left: 70%; width: 28%;">#1022</div>
+                                </div>
+                            </div>
+                            <div class="gantt-mini-row">
+                                <span class="gantt-mini-label">产线 C</span>
+                                <div class="gantt-mini-track">
+                                    <div class="gantt-mini-bar bar-normal" style="left: 5%; width: 43%;">#1024</div>
+                                    <div class="gantt-mini-bar bar-normal" style="left: 52%; width: 46%;">#1025</div>
+                                </div>
                             </div>
                         </div>
-                        <div class="gantt-mini-row anim-gantt-3">
-                            <span class="gantt-mini-label">产线 C</span>
-                            <div class="gantt-mini-track">
-                                <div class="gantt-mini-bar bar-normal" style="left: 5%; width: 43%;">#1024</div>
-                                <div class="gantt-mini-bar bar-normal" style="left: 52%; width: 46%;">#1025</div>
+
+                        <!-- Act 4: 库存预警 + 自动采购 -->
+                        <div class="factory-alert-card anim-ft-alert">
+                            <div class="fa-header">
+                                <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><circle cx="12" cy="17" r="0.5"></circle></svg>
+                                库存预警
+                            </div>
+                            <div class="fa-body">
+                                <div class="fa-row">
+                                    <span class="fa-item-name">螺丝 M6</span>
+                                    <span class="fa-item-gap">缺口 <strong>300 件</strong></span>
+                                </div>
+                                <div class="fa-action">
+                                    <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    已自动向供应商 A 发起采购单 · 预计周三到货
+                                </div>
                             </div>
                         </div>
-                        <div class="gantt-mini-alert anim-gantt-4">
-                            <div class="gantt-alert-badge">
-                                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                                插单重排
+
+                        <!-- Act 5: 执行结果汇总 -->
+                        <div class="factory-result anim-ft-result">
+                            <div class="fr-item">
+                                <span class="fr-label">排产耗时</span>
+                                <span class="fr-val accent">0.8 秒</span>
                             </div>
-                            <div class="gantt-alert-text">产线 B 急单插入 → #1022 自动后移至周四 · 总延期 0 天</div>
+                            <div class="fr-divider"></div>
+                            <div class="fr-item">
+                                <span class="fr-label">原订单延期</span>
+                                <span class="fr-val green">0 天</span>
+                            </div>
+                            <div class="fr-divider"></div>
+                            <div class="fr-item">
+                                <span class="fr-label">交货预测</span>
+                                <span class="fr-val green">周五准时</span>
+                            </div>
                         </div>
                     </div>
                 </div>
