@@ -268,35 +268,76 @@ body {
 .solution-row {
     display: flex;
     justify-content: space-between;
-    gap: 40px;
-    margin-top: 50px;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .solution-box {
     flex: 1;
-    background: var(--bg-secondary);
-    padding: 40px;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-top: 4px solid var(--accent-color);
-    text-align: center;
+    text-align: left;
+    
+    /* Animation Initial State */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Trigger Animation when Slide is Active */
+.slide.active .solution-box {
+    animation: fadeInUp 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.slide.active .solution-box:nth-child(1) {
+    animation-delay: 0.1s;
+}
+.slide.active .solution-box:nth-child(2) {
+    animation-delay: 0.3s;
+}
+.slide.active .solution-box:nth-child(3) {
+    animation-delay: 0.5s;
+}
+
+.solution-box:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    border-color: rgba(99, 102, 241, 0.3);
 }
 
 .solution-box h3 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 .solution-box p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 0;
     color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 .solution-box p strong {
     color: var(--text-primary);
-    font-size: 1.4rem;
-    display: block;
-    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 /* Table */
