@@ -1333,8 +1333,11 @@ body::before {
 
 .converge-lines {
     width: 100%;
-    height: 70px;
-    margin-bottom: 0;
+    max-width: 1110px; /* Align with pillars max-width */
+    height: 90px;
+    margin: -10px auto 0;
+    position: relative;
+    z-index: 1;
 }
 
 .converge-lines svg {
@@ -2049,6 +2052,804 @@ body::before {
 
 
 /* ============================================
+   SHARED: Scene capability badge + highlights
+   ============================================ */
+
+.scene-capability {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.cap-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-warm));
+    color: #050811;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'JetBrains Mono', monospace;
+    flex-shrink: 0;
+}
+
+.cap-text {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+}
+
+.scene-highlights {
+    display: flex;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.sh-item {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 18px 22px;
+    background: rgba(0, 229, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 229, 255, 0.12);
+    transition: all 0.3s ease;
+}
+
+.sh-item:hover {
+    background: rgba(0, 229, 255, 0.1);
+    border-color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.sh-item svg {
+    width: 22px;
+    height: 22px;
+    stroke: var(--accent-color);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.sh-item span {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+
+/* ============================================
+   SLIDE 7: 差旅行政 - 工作流管线
+   ============================================ */
+
+.scene-workflow-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.workflow-pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    flex: 1;
+}
+
+.wf-step {
+    flex: 1;
+    padding: 30px 25px;
+    border-radius: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.wf-input {
+    background: linear-gradient(135deg, rgba(14, 22, 41, 0.6), rgba(10, 15, 30, 0.3));
+    border: 2px solid var(--border-color);
+}
+
+.wf-process {
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.1), rgba(14, 22, 41, 0.5));
+    border: 2px solid rgba(0, 229, 255, 0.25);
+    position: relative;
+}
+
+.wf-output {
+    background: linear-gradient(135deg, rgba(255, 171, 0, 0.08), rgba(14, 22, 41, 0.4));
+    border: 2px solid rgba(255, 171, 0, 0.2);
+}
+
+.wf-step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 229, 255, 0.2);
+}
+
+.wf-step-icon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(255, 171, 0, 0.1));
+    border: 1px solid rgba(0, 229, 255, 0.25);
+}
+
+.wf-step-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--accent-color);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.wf-output .wf-step-icon {
+    background: linear-gradient(135deg, rgba(255, 171, 0, 0.2), rgba(0, 229, 255, 0.1));
+    border-color: rgba(255, 171, 0, 0.3);
+}
+
+.wf-output .wf-step-icon svg {
+    stroke: var(--accent-warm);
+}
+
+.wf-step-label {
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 15px;
+}
+
+.wf-step-detail {
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    line-height: 1.7;
+    font-weight: 500;
+}
+
+.wf-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wf-actions span {
+    padding: 8px 16px;
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.wf-arrow {
+    display: flex;
+    align-items: center;
+    width: 50px;
+    flex-shrink: 0;
+    color: var(--accent-color);
+    opacity: 0.5;
+}
+
+.wf-arrow svg {
+    width: 100%;
+    height: 24px;
+}
+
+/* Animation */
+.slide.active .wf-step {
+    animation: cardSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+.slide.active .wf-step:nth-of-type(1) { animation-delay: 0.1s; }
+.slide.active .wf-process { animation-delay: 0.3s; }
+.slide.active .wf-output { animation-delay: 0.5s; }
+.slide.active .wf-arrow {
+    animation: fadeInLines 0.5s ease 0.4s forwards;
+    opacity: 0;
+}
+
+
+/* ============================================
+   SLIDE 8: 企业私有大脑 - 输入→转化→输出
+   ============================================ */
+
+.scene-transform-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.transform-flow {
+    display: flex;
+    gap: 25px;
+    align-items: stretch;
+    flex: 1;
+}
+
+.tf-column {
+    flex: 1;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.tf-input {
+    background: linear-gradient(135deg, rgba(14, 22, 41, 0.6), rgba(10, 15, 30, 0.3));
+    border: 2px solid var(--border-color);
+}
+
+.tf-output {
+    background: linear-gradient(135deg, rgba(255, 171, 0, 0.06), rgba(14, 22, 41, 0.4));
+    border: 2px solid rgba(255, 171, 0, 0.2);
+}
+
+.tf-column h4 {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
+}
+
+.tf-file-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    justify-content: center;
+}
+
+.tf-file {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.tf-file:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(5px);
+}
+
+.tf-file svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--text-secondary);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    flex-shrink: 0;
+}
+
+.tf-file span {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.tf-middle {
+    width: 140px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.tf-brain {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(255, 171, 0, 0.15));
+    border: 3px solid var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.3);
+    animation: nodePulse 3s ease-in-out infinite;
+}
+
+.tf-brain svg {
+    width: 42px;
+    height: 42px;
+    stroke: var(--accent-color);
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.tf-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+.tf-sublabel {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.tf-result-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    flex: 1;
+    justify-content: center;
+}
+
+.tf-result {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 22px;
+    background: rgba(255, 171, 0, 0.06);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 171, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.tf-result:hover {
+    background: rgba(255, 171, 0, 0.12);
+    transform: translateX(5px);
+}
+
+.tf-result strong {
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.tf-val {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--accent-warm);
+}
+
+.tf-val.ok { color: #4ade80; }
+.tf-val.warn { color: #ff6b6b; }
+
+/* Animation */
+.slide.active .tf-input,
+.slide.active .tf-output {
+    animation: cardSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+.slide.active .tf-input { animation-delay: 0.1s; }
+.slide.active .tf-middle {
+    animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+    opacity: 0;
+}
+.slide.active .tf-output { animation-delay: 0.5s; }
+
+
+/* ============================================
+   SLIDE 9: 客服销售 - 多渠道枢纽
+   ============================================ */
+
+.scene-hub-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hub-container {
+    display: flex;
+    gap: 25px;
+    flex: 1;
+    align-items: stretch;
+}
+
+.hub-left, .hub-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hub-channel {
+    background: linear-gradient(135deg, rgba(14, 22, 41, 0.6), rgba(10, 15, 30, 0.3));
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.hub-channel:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15);
+}
+
+.hub-ch-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hub-chat {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.hub-msg {
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.hub-msg.customer {
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text-primary);
+    border-bottom-right-radius: 4px;
+    align-self: flex-end;
+    max-width: 90%;
+}
+
+.hub-msg.agent {
+    background: linear-gradient(135deg, var(--accent-color), rgba(0, 184, 212, 1));
+    color: #050811;
+    font-weight: 500;
+    border-bottom-left-radius: 4px;
+    max-width: 90%;
+    box-shadow: 0 4px 15px rgba(0, 229, 255, 0.25);
+}
+
+.hub-center {
+    width: 160px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.hub-core {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(255, 171, 0, 0.15));
+    border: 3px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    box-shadow: 0 0 40px rgba(0, 229, 255, 0.3);
+    animation: nodePulse 3s ease-in-out infinite;
+}
+
+.hub-core svg {
+    width: 32px;
+    height: 32px;
+    stroke: var(--accent-color);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.hub-core span {
+    font-size: 0.7rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-color);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+}
+
+.hub-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.hub-stat {
+    text-align: center;
+    padding: 12px;
+    background: rgba(0, 229, 255, 0.06);
+    border-radius: 10px;
+    border: 1px solid rgba(0, 229, 255, 0.15);
+}
+
+.hub-stat-val {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.hub-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+}
+
+.hub-feature {
+    background: linear-gradient(135deg, rgba(14, 22, 41, 0.6), rgba(10, 15, 30, 0.3));
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.hub-feature:hover {
+    border-color: var(--accent-warm);
+    box-shadow: 0 10px 30px rgba(255, 171, 0, 0.12);
+    transform: translateX(5px);
+}
+
+.hub-feature h4 {
+    font-size: 1.15rem;
+    color: var(--accent-warm);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.hub-feature p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Animation */
+.slide.active .hub-channel,
+.slide.active .hub-feature {
+    animation: cardSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+.slide.active .hub-left .hub-channel:nth-child(1) { animation-delay: 0.1s; }
+.slide.active .hub-left .hub-channel:nth-child(2) { animation-delay: 0.2s; }
+.slide.active .hub-core {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    opacity: 0;
+}
+.slide.active .hub-right .hub-feature:nth-child(1) { animation-delay: 0.25s; }
+.slide.active .hub-right .hub-feature:nth-child(2) { animation-delay: 0.35s; }
+
+
+/* ============================================
+   SLIDE 10: 工厂排产 - 甘特图
+   ============================================ */
+
+.scene-gantt-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.gantt-demo {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(14, 22, 41, 0.6), rgba(10, 15, 30, 0.3));
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.gantt-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 15px;
+}
+
+.gantt-header > span {
+    width: 90px;
+    flex-shrink: 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gantt-timeline {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+}
+
+.gantt-timeline span {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 500;
+}
+
+.gantt-row {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.gantt-label {
+    width: 90px;
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.gantt-bars {
+    flex: 1;
+    height: 42px;
+    position: relative;
+}
+
+.gantt-bar {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0 12px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.gantt-bar:hover {
+    transform: translateY(-3px);
+    z-index: 2;
+}
+
+.gantt-bar.normal {
+    background: linear-gradient(90deg, rgba(0, 229, 255, 0.25), rgba(0, 229, 255, 0.15));
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    color: var(--accent-color);
+}
+
+.gantt-bar.normal:hover {
+    box-shadow: 0 8px 20px rgba(0, 229, 255, 0.25);
+}
+
+.gantt-bar.urgent {
+    background: linear-gradient(90deg, rgba(255, 171, 0, 0.4), rgba(255, 100, 100, 0.3));
+    border: 2px solid var(--accent-warm);
+    color: var(--accent-warm);
+    font-weight: 700;
+    box-shadow: 0 4px 15px rgba(255, 171, 0, 0.3);
+    z-index: 1;
+    gap: 6px;
+}
+
+.gantt-bar.urgent svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--accent-warm);
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+}
+
+.gantt-bar.urgent:hover {
+    box-shadow: 0 8px 25px rgba(255, 171, 0, 0.4);
+}
+
+.gantt-bar.shifted {
+    background: linear-gradient(90deg, rgba(0, 229, 255, 0.15), rgba(0, 229, 255, 0.08));
+    border: 1px dashed rgba(0, 229, 255, 0.25);
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+.gantt-bottom {
+    margin-top: 25px;
+}
+
+.gantt-insight {
+    display: flex;
+    gap: 25px;
+}
+
+.gantt-insight-item {
+    flex: 1;
+    padding: 22px;
+    background: rgba(0, 229, 255, 0.05);
+    border-radius: 14px;
+    border: 1px solid rgba(0, 229, 255, 0.12);
+    transition: all 0.3s ease;
+}
+
+.gantt-insight-item:hover {
+    background: rgba(0, 229, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.gantt-insight-item.highlight-insight {
+    background: rgba(255, 171, 0, 0.06);
+    border-color: rgba(255, 171, 0, 0.2);
+}
+
+.gantt-insight-item.highlight-insight:hover {
+    background: rgba(255, 171, 0, 0.12);
+}
+
+.gantt-insight-item h4 {
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.gantt-insight-item.highlight-insight h4 {
+    color: var(--accent-warm);
+}
+
+.gantt-insight-item p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Animation */
+.slide.active .gantt-demo {
+    animation: cardSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    opacity: 0;
+}
+.slide.active .gantt-insight-item {
+    animation: slideInFromBottom 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+.slide.active .gantt-insight-item:nth-child(1) { animation-delay: 0.4s; }
+.slide.active .gantt-insight-item:nth-child(2) { animation-delay: 0.55s; }
+
+
+/* ============================================
    SLIDE 11: 核心业务价值 - 价值矩阵布局
    ============================================ */
 
@@ -2746,5 +3547,56 @@ body::before {
         width: auto;
         height: 2px;
         background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    }
+
+    /* Scenes responsive */
+    .workflow-pipeline {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .wf-arrow {
+        transform: rotate(90deg);
+        width: 40px;
+        height: 30px;
+        align-self: center;
+    }
+
+    .scene-highlights {
+        flex-direction: column;
+    }
+
+    .transform-flow {
+        flex-direction: column;
+    }
+
+    .tf-middle {
+        width: 100%;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+    }
+
+    .hub-container {
+        flex-direction: column;
+    }
+
+    .hub-center {
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .hub-stats {
+        flex-direction: row;
+    }
+
+    .gantt-demo {
+        overflow-x: auto;
+    }
+
+    .gantt-insight {
+        flex-direction: column;
     }
 }
