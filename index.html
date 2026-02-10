@@ -406,52 +406,47 @@
             <div class="slide-header">
                 <h2>06. 场景：全能差旅与行政专家</h2>
             </div>
-            <div class="slide-content scene-workflow-layout">
-                <div class="scene-capability">
-                    <span class="cap-badge">核心能力</span>
-                    <span class="cap-text">跨应用执行 + 浏览器自动化</span>
+            <div class="slide-content scene-flex">
+                <div class="scene-left">
+                    <div class="scene-capability">
+                        <span class="cap-badge">核心能力</span>
+                        <span class="cap-text">跨应用执行 + 浏览器自动化</span>
+                    </div>
+                    <div class="scene-desc">
+                        <p>员工通过企微像发消息一样下达指令，Agent 自动调取历史偏好，完成从订票到接送的全流程安排。</p>
+                    </div>
+                    <ul class="scene-features">
+                        <li><strong>全流程接管：</strong>实时监控航班，延误时主动改签，同步调整酒店与接送</li>
+                        <li><strong>长期记忆：</strong>自动记住"不住一楼"、"只要靠窗"等偏好，无需重复交代</li>
+                        <li><strong>自然交互：</strong>"下周去上海，按老规矩办"——像给同事发消息一样简单</li>
+                    </ul>
                 </div>
-                <div class="workflow-pipeline">
-                    <div class="wf-step wf-input">
-                        <div class="wf-step-icon">
-                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                <div class="scene-right">
+                    <div class="anim-chat-demo">
+                        <div class="anim-chat-window">
+                            <div class="anim-chat-header">
+                                <div class="anim-chat-avatar">
+                                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                </div>
+                                <span>企业微信 · InBox Agent</span>
+                            </div>
+                            <div class="anim-chat-body">
+                                <div class="chat-bubble user anim-msg-1">下周去上海，按老规矩办</div>
+                                <div class="chat-bubble bot anim-msg-2">
+                                    <div class="typing-indicator"><span></span><span></span><span></span></div>
+                                    <div class="typed-text">好的，已为您安排：</div>
+                                </div>
+                                <div class="chat-bubble bot task-list anim-msg-3">
+                                    <div class="task-check done"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> 周一 MU5108 靠窗座 已出票</div>
+                                    <div class="task-check done"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> 外滩酒店 高层靠窗房 已预订</div>
+                                    <div class="task-check progress"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 接送机安排中...</div>
+                                </div>
+                                <div class="chat-bubble bot alert anim-msg-4">
+                                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                    <span>检测到 MU5108 延误2h，已自动改签 MU5112，酒店已同步调整</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="wf-step-label">用户指令</div>
-                        <div class="wf-step-detail">"下周去上海，<br>按老规矩办"</div>
-                    </div>
-                    <div class="wf-arrow">
-                        <svg viewBox="0 0 40 24"><path d="M0 12h32m-8-8l8 8-8 8" stroke="currentColor" fill="none" stroke-width="2"/></svg>
-                    </div>
-                    <div class="wf-step wf-process">
-                        <div class="wf-step-icon">
-                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M12 1v6m0 6v6m-9-9h6m6 0h6"></path><circle cx="12" cy="12" r="10"></circle></svg>
-                        </div>
-                        <div class="wf-step-label">Agent 执行</div>
-                        <div class="wf-actions">
-                            <span>调取偏好记忆</span>
-                            <span>登录航司官网</span>
-                            <span>预订酒店接送</span>
-                        </div>
-                    </div>
-                    <div class="wf-arrow">
-                        <svg viewBox="0 0 40 24"><path d="M0 12h32m-8-8l8 8-8 8" stroke="currentColor" fill="none" stroke-width="2"/></svg>
-                    </div>
-                    <div class="wf-step wf-output">
-                        <div class="wf-step-icon">
-                            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                        </div>
-                        <div class="wf-step-label">执行结果</div>
-                        <div class="wf-step-detail">航班已出票<br>酒店靠窗房<br>接送机已安排</div>
-                    </div>
-                </div>
-                <div class="scene-highlights">
-                    <div class="sh-item">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        <span>航班延误时主动改签，无需人工指令</span>
-                    </div>
-                    <div class="sh-item">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        <span>长期记忆：不住一楼、只要靠窗，无需重复交代</span>
                     </div>
                 </div>
             </div>
@@ -462,62 +457,57 @@
             <div class="slide-header">
                 <h2>07. 场景：企业私有大脑</h2>
             </div>
-            <div class="slide-content scene-transform-layout">
-                <div class="scene-capability">
-                    <span class="cap-badge">核心能力</span>
-                    <span class="cap-text">本地部署 + 非结构化数据处理</span>
+            <div class="slide-content scene-flex">
+                <div class="scene-left">
+                    <div class="scene-capability">
+                        <span class="cap-badge">核心能力</span>
+                        <span class="cap-text">本地部署 + 非结构化数据处理</span>
+                    </div>
+                    <div class="scene-desc">
+                        <p>将沉睡的纸质合同、扫描件、财务报表瞬间转化为结构化数据，在本地完成深度分析。</p>
+                    </div>
+                    <ul class="scene-features">
+                        <li><strong>数据主权：</strong>运行在本地硬件，完全离线，物理隔绝公有云风险</li>
+                        <li><strong>万能解析：</strong>合同PDF、财务报表、会议纪要 → JSON/SQL 结构化数据</li>
+                        <li><strong>深度洞察：</strong>记得上月战略会纪要，结合 CRM 数据对比分析 KPI 偏差</li>
+                    </ul>
                 </div>
-                <div class="transform-flow">
-                    <div class="tf-column tf-input">
-                        <h4>非结构化输入</h4>
-                        <div class="tf-file-stack">
-                            <div class="tf-file">
+                <div class="scene-right">
+                    <div class="anim-parse-demo">
+                        <div class="parse-stage parse-input">
+                            <div class="parse-file anim-file-1">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                                 <span>合同.pdf</span>
                             </div>
-                            <div class="tf-file">
+                            <div class="parse-file anim-file-2">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                                 <span>财务报表.xlsx</span>
                             </div>
-                            <div class="tf-file">
+                            <div class="parse-file anim-file-3">
                                 <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
                                 <span>会议纪要.doc</span>
                             </div>
                         </div>
-                    </div>
-                    <div class="tf-middle">
-                        <div class="tf-brain">
-                            <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="2" x2="9" y2="4"></line><line x1="15" y1="2" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="22"></line><line x1="15" y1="20" x2="15" y2="22"></line><line x1="2" y1="9" x2="4" y2="9"></line><line x1="2" y1="15" x2="4" y2="15"></line><line x1="20" y1="9" x2="22" y2="9"></line><line x1="20" y1="15" x2="22" y2="15"></line></svg>
+                        <div class="parse-arrow-zone anim-arrow-spin">
+                            <div class="parse-processor">
+                                <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="2" x2="9" y2="4"></line><line x1="15" y1="2" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="22"></line><line x1="15" y1="20" x2="15" y2="22"></line><line x1="2" y1="9" x2="4" y2="9"></line><line x1="2" y1="15" x2="4" y2="15"></line><line x1="20" y1="9" x2="22" y2="9"></line><line x1="20" y1="15" x2="22" y2="15"></line></svg>
+                            </div>
+                            <span>OCR + AI</span>
                         </div>
-                        <span class="tf-label">OCR + AI 解析</span>
-                        <span class="tf-sublabel">完全离线 · 数据不出域</span>
-                    </div>
-                    <div class="tf-column tf-output">
-                        <h4>结构化洞察</h4>
-                        <div class="tf-result-stack">
-                            <div class="tf-result">
-                                <strong>合同金额</strong>
-                                <span class="tf-val">¥ 5,000,000</span>
+                        <div class="parse-stage parse-output">
+                            <div class="parse-result anim-result-1">
+                                <div class="result-key">合同金额</div>
+                                <div class="result-val gold">¥ 5,000,000</div>
                             </div>
-                            <div class="tf-result">
-                                <strong>风险条款</strong>
-                                <span class="tf-val ok">未发现</span>
+                            <div class="parse-result anim-result-2">
+                                <div class="result-key">风险条款</div>
+                                <div class="result-val green">未发现</div>
                             </div>
-                            <div class="tf-result">
-                                <strong>KPI 达标率</strong>
-                                <span class="tf-val warn">78% (↓12%)</span>
+                            <div class="parse-result anim-result-3">
+                                <div class="result-key">KPI 达标率</div>
+                                <div class="result-val red">78% ↓12%</div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="scene-highlights">
-                    <div class="sh-item">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-                        <span>运行在本地硬件，物理隔绝公有云风险</span>
-                    </div>
-                    <div class="sh-item">
-                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                        <span>记得上月战略会纪要，结合 CRM 实时数据对比分析</span>
                     </div>
                 </div>
             </div>
@@ -528,52 +518,46 @@
             <div class="slide-header">
                 <h2>08. 场景：金牌客服与销售助理</h2>
             </div>
-            <div class="slide-content scene-hub-layout">
-                <div class="scene-capability">
-                    <span class="cap-badge">核心能力</span>
-                    <span class="cap-text">多渠道响应 + 情绪感知</span>
+            <div class="slide-content scene-flex">
+                <div class="scene-left">
+                    <div class="scene-capability">
+                        <span class="cap-badge">核心能力</span>
+                        <span class="cap-text">多渠道响应 + 情绪感知</span>
+                    </div>
+                    <div class="scene-desc">
+                        <p>接入企微/公众号后台，7×24 秒级响应客户咨询，学习金牌话术，智能流转人工。</p>
+                    </div>
+                    <ul class="scene-features">
+                        <li><strong>秒级响应：</strong>凌晨 2 点的咨询、周末的售后投诉，3 秒内专业回复</li>
+                        <li><strong>金牌话术：</strong>学习销冠经验，巧妙化解异议，推动成单</li>
+                        <li><strong>智能流转：</strong>检测到强意向或情绪激动时，自动摘要转接人工客服</li>
+                    </ul>
                 </div>
-                <div class="hub-container">
-                    <div class="hub-left">
-                        <div class="hub-channel">
-                            <div class="hub-ch-badge">企微</div>
-                            <div class="hub-chat">
-                                <div class="hub-msg customer">"太贵了，能便宜点吗？"</div>
-                                <div class="hub-msg agent">理解您的顾虑。这个价格包含了全年运维…</div>
+                <div class="scene-right">
+                    <div class="anim-cs-demo">
+                        <div class="cs-channels">
+                            <div class="cs-channel-tab active">企微</div>
+                            <div class="cs-channel-tab">公众号</div>
+                            <div class="cs-channel-tab">小程序</div>
+                        </div>
+                        <div class="cs-chat-body">
+                            <div class="chat-bubble user anim-cs-1">"这个价格太贵了，能便宜点吗？"</div>
+                            <div class="chat-bubble bot anim-cs-2">
+                                <div class="typing-indicator"><span></span><span></span><span></span></div>
+                                <div class="typed-text">理解您的顾虑！这个价格包含了全年运维和升级服务。同类产品年费通常在 8-15 万，我们的方案其实更具性价比。</div>
                             </div>
-                        </div>
-                        <div class="hub-channel">
-                            <div class="hub-ch-badge">公众号</div>
-                            <div class="hub-chat">
-                                <div class="hub-msg customer">"发货到哪了？"</div>
-                                <div class="hub-msg agent">您的订单已到达深圳中转站，预计明天送达。</div>
+                            <div class="chat-bubble user anim-cs-3">"那我再考虑考虑..."</div>
+                            <div class="cs-emotion-bar anim-cs-4">
+                                <div class="emotion-tag">
+                                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                                    情绪：犹豫中
+                                </div>
+                                <div class="emotion-action">→ 推送限时优惠</div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="hub-center">
-                        <div class="hub-core">
-                            <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                            <span>AI Agent</span>
-                        </div>
-                        <div class="hub-stats">
-                            <div class="hub-stat">
-                                <span class="hub-stat-val">3s</span>
-                                <span class="hub-stat-label">响应时间</span>
+                            <div class="chat-bubble bot highlight-msg anim-cs-5">
+                                <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                                <span>本周签约可享 9 折优惠 + 免费定制一个专属 Skill，需要我为您锁定优惠吗？</span>
                             </div>
-                            <div class="hub-stat">
-                                <span class="hub-stat-val">7×24</span>
-                                <span class="hub-stat-label">在线时间</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hub-right">
-                        <div class="hub-feature">
-                            <h4>金牌话术库</h4>
-                            <p>学习销冠经验，巧妙化解客户异议，推动成单</p>
-                        </div>
-                        <div class="hub-feature">
-                            <h4>智能流转</h4>
-                            <p>检测情绪激动或强意向，自动摘要转接人工客服</p>
                         </div>
                     </div>
                 </div>
@@ -585,53 +569,60 @@
             <div class="slide-header">
                 <h2>09. 场景：智能工厂排产</h2>
             </div>
-            <div class="slide-content scene-gantt-layout">
-                <div class="scene-capability">
-                    <span class="cap-badge">核心能力</span>
-                    <span class="cap-text">订单驱动 + 自动规划</span>
+            <div class="slide-content scene-flex">
+                <div class="scene-left">
+                    <div class="scene-capability">
+                        <span class="cap-badge">核心能力</span>
+                        <span class="cap-text">订单驱动 + 自动规划</span>
+                    </div>
+                    <div class="scene-desc">
+                        <p>销售下单瞬间，Agent 自动拉取 BOM 信息，核对库存产能，生成完整执行方案。</p>
+                    </div>
+                    <ul class="scene-features">
+                        <li><strong>订单即排班：</strong>自动生成生产工单 + 物料领用单 + 人员排班表</li>
+                        <li><strong>柔性插单：</strong>急单插入时瞬间重算全厂优先级，成本最低、延期最少</li>
+                        <li><strong>智能预警：</strong>库存不足、产能瓶颈提前预警，杜绝停产风险</li>
+                    </ul>
                 </div>
-                <div class="gantt-demo">
-                    <div class="gantt-header">
-                        <span>工位</span>
-                        <div class="gantt-timeline">
-                            <span>周一</span><span>周二</span><span>周三</span><span>周四</span><span>周五</span>
-                        </div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-label">产线 A</span>
-                        <div class="gantt-bars">
-                            <div class="gantt-bar normal" style="left: 0%; width: 55%;">订单 #1021</div>
-                            <div class="gantt-bar normal" style="left: 60%; width: 40%;">订单 #1023</div>
-                        </div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-label">产线 B</span>
-                        <div class="gantt-bars">
-                            <div class="gantt-bar normal" style="left: 0%; width: 35%;">订单 #1022</div>
-                            <div class="gantt-bar urgent" style="left: 38%; width: 30%;">
-                                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                                急单插入
+                <div class="scene-right">
+                    <div class="anim-gantt-demo">
+                        <div class="gantt-mini-header">
+                            <span class="gantt-mini-title">排产看板</span>
+                            <div class="gantt-mini-days">
+                                <span>周一</span><span>周二</span><span>周三</span><span>周四</span><span>周五</span>
                             </div>
-                            <div class="gantt-bar shifted" style="left: 72%; width: 28%;">→ #1022</div>
                         </div>
-                    </div>
-                    <div class="gantt-row">
-                        <span class="gantt-label">产线 C</span>
-                        <div class="gantt-bars">
-                            <div class="gantt-bar normal" style="left: 5%; width: 45%;">订单 #1024</div>
-                            <div class="gantt-bar normal" style="left: 55%; width: 45%;">订单 #1025</div>
+                        <div class="gantt-mini-row anim-gantt-1">
+                            <span class="gantt-mini-label">产线 A</span>
+                            <div class="gantt-mini-track">
+                                <div class="gantt-mini-bar bar-normal" style="left: 2%; width: 52%;">#1021</div>
+                                <div class="gantt-mini-bar bar-normal" style="left: 58%; width: 40%;">#1023</div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="gantt-bottom">
-                    <div class="gantt-insight">
-                        <div class="gantt-insight-item">
-                            <h4>订单即排班</h4>
-                            <p>销售下单瞬间，自动拉取 BOM 信息，核对库存产能，生成工单 + 领料单 + 排班表</p>
+                        <div class="gantt-mini-row anim-gantt-2">
+                            <span class="gantt-mini-label">产线 B</span>
+                            <div class="gantt-mini-track">
+                                <div class="gantt-mini-bar bar-normal bar-shift" style="left: 2%; width: 33%;">#1022</div>
+                                <div class="gantt-mini-bar bar-urgent bar-insert" style="left: 38%; width: 28%;">
+                                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                    急单
+                                </div>
+                                <div class="gantt-mini-bar bar-shifted" style="left: 70%; width: 28%;">→#1022</div>
+                            </div>
                         </div>
-                        <div class="gantt-insight-item highlight-insight">
-                            <h4>柔性插单</h4>
-                            <p>急单插入时瞬间重算全厂优先级，给出"成本最低、延期最少"的调整方案</p>
+                        <div class="gantt-mini-row anim-gantt-3">
+                            <span class="gantt-mini-label">产线 C</span>
+                            <div class="gantt-mini-track">
+                                <div class="gantt-mini-bar bar-normal" style="left: 5%; width: 43%;">#1024</div>
+                                <div class="gantt-mini-bar bar-normal" style="left: 52%; width: 46%;">#1025</div>
+                            </div>
+                        </div>
+                        <div class="gantt-mini-alert anim-gantt-4">
+                            <div class="gantt-alert-badge">
+                                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                插单重排
+                            </div>
+                            <div class="gantt-alert-text">产线 B 急单插入 → #1022 自动后移至周四 · 总延期 0 天</div>
                         </div>
                     </div>
                 </div>
