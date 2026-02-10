@@ -1,50 +1,6 @@
-# 硬盒科技(instry.ai)商业计划书演示
-
-本仓库包含硬盒科技(instry.ai)商业计划书演示文稿的文档和源代码。
-
-预览地址： **[https://instry.ai](https://instry.ai)**
-
-## 关于本项目
-
-本项目是 **纯 AI 开发** 的：
-
-- **共同创作**: Claude & Gemini
-- IDE： Claude code & Trae
-- **无设计稿**: 100% 的 UI/UX、动画和布局均通过代码对话直接生成，没有任何 Figma/Sketch 原型。
-- **纯代码**实现: 完全通过自然语言提示词和 AI 辅助编码构建。
-
-## 开发过程
-
-1. **内容起草 (1 小时)**:
-   - 编写 `bp.md` 定义商业计划逻辑、结构和关键信息。
-   
-2. **AI 实现 (5 小时)**:
-   - 通过AI编写代码生成处理了所有视觉设计、响应式布局和复杂动画。
-
-3. 开发**总成本**: < 100 RMB (API Token 总消耗)
-
-## 在线预览
-
-您可以在以下地址查看演示文稿的在线预览：
-
-**[https://instry.ai](https://instry.ai)**
-
-## 项目结构
-
-- `index.html`: 包含幻灯片结构和内容的主入口点。
-- `styles.css`: 幻灯片的所有样式和动画。
-- `bp.md`: 商业计划书的内容草稿/笔记。
-
-## 本地开发
-
-要在本地运行演示文稿：
-
-1. 克隆仓库
-2. 在浏览器中打开 `index.html` 
-
----
-
 # Hardcore Tech (instry.ai) Business Plan Presentation
+
+[中文版 (Chinese Version)](README_CN.md)
 
 This repository contains the documentation and source code for the Hardcore Tech (instry.ai) Business Plan presentation.
 
@@ -80,3 +36,10 @@ You can view the live preview of this presentation at:
 - `index.html`: Main entry point containing the slide structure and content.
 - `styles.css`: All styling and animations for the slides.
 - `bp.md`: Content draft/notes for the business plan.
+
+## Local Development
+
+To run the presentation locally:
+
+1. Clone the repository
+2. Open `index.html` in your browser
