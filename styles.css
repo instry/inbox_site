@@ -181,23 +181,54 @@ body {
     font-weight: 700;
 }
 
+/* Vertical Center Slide Content */
+.slide-content.vertical-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 60px; /* Optical center adjustment */
+}
+
 .bullet-points {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     max-width: 900px;
-    margin: 0 auto;
+    margin: 60px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .bullet-points li {
-    margin-bottom: 30px;
+    margin-bottom: 0; /* Use gap in flex container instead */
     position: relative;
-    padding-left: 40px;
+    padding: 35px 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    border-left: 5px solid var(--accent-color);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    line-height: 1.5;
 }
-.bullet-points li::before {
-    content: ""; /* Remove bullet point */
+
+.bullet-points li:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.bullet-points li strong {
     color: var(--accent-color);
-    position: absolute;
-    left: 0;
-    font-weight: bold;
+    font-size: 1.3em;
+    display: block;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+.highlight-text {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-color);
+    text-underline-offset: 4px;
 }/* Grid Layouts */
 .grid-2x2 {
     display: grid;
