@@ -234,6 +234,41 @@ body::before {
     animation: titleSlideIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards;
 }
 
+.contact-email {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 12px 24px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-email:hover {
+    background: rgba(0, 229, 255, 0.1);
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 229, 255, 0.15);
+    text-decoration: none;
+}
+
+.contact-email svg {
+    stroke: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.contact-email:hover svg {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.contact-email span {
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+}
+
 /* Standard Slide Layout */
 .slide-header {
     margin-bottom: 40px;
