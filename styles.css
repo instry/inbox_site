@@ -1108,6 +1108,945 @@ body::before {
     letter-spacing: 0.05em;
 }
 
+/* ============================================
+   SLIDE 2: 市场现状 - 左右分栏 + 进化时间线
+   ============================================ */
+
+.market-layout {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    height: 100%;
+}
+
+.market-left {
+    flex: 1.1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.market-quote {
+    margin-bottom: 40px;
+}
+
+.market-quote p {
+    font-size: 2.4rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+.market-quote-highlight {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    color: var(--text-primary) !important;
+    line-height: 1.3 !important;
+    display: block;
+    margin-top: 10px;
+}
+
+.market-sub {
+    font-size: 1.15rem;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    padding-left: 25px;
+    border-left: 3px solid var(--accent-color);
+}
+
+.market-right {
+    flex: 0.9;
+    display: flex;
+    align-items: center;
+}
+
+/* Evolution Timeline */
+.evolution-track {
+    position: relative;
+    padding-left: 40px;
+    width: 100%;
+}
+
+.evolution-track::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--border-color) 0%, var(--accent-color) 50%, var(--accent-warm) 100%);
+    border-radius: 2px;
+}
+
+.evo-stage {
+    position: relative;
+    padding: 30px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.evo-dot {
+    position: absolute;
+    left: -33px;
+    top: 38px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 3px solid var(--border-color);
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.evo-stage.past .evo-dot {
+    border-color: var(--text-secondary);
+    background: var(--text-secondary);
+    width: 14px;
+    height: 14px;
+    top: 40px;
+    left: -31px;
+}
+
+.evo-stage.present .evo-dot {
+    border-color: var(--accent-color);
+    background: rgba(0, 229, 255, 0.3);
+}
+
+.evo-stage.future .evo-dot {
+    border-color: var(--accent-warm);
+    background: var(--accent-warm);
+    box-shadow: 0 0 20px rgba(255, 171, 0, 0.6);
+}
+
+.evo-content {
+    flex: 1;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(14, 22, 41, 0.5) 0%, rgba(10, 15, 30, 0.2) 100%);
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.evo-stage:hover .evo-content {
+    transform: translateX(10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.15);
+}
+
+.evo-stage.future .evo-content {
+    border-color: rgba(255, 171, 0, 0.3);
+    background: linear-gradient(135deg, rgba(255, 171, 0, 0.08) 0%, rgba(14, 22, 41, 0.4) 100%);
+}
+
+.evo-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.evo-stage.future .evo-year {
+    color: var(--accent-warm);
+}
+
+.evo-content h4 {
+    font-size: 1.35rem;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.evo-stage.future .evo-content h4 {
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-warm));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.evo-content p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* Staggered animations for market slide */
+.slide.active .market-quote {
+    animation: titleSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    opacity: 0;
+}
+
+.slide.active .market-sub {
+    animation: titleSlideIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+    opacity: 0;
+}
+
+.slide.active .evo-stage {
+    animation: slideInFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+.slide.active .evo-stage:nth-child(1) { animation-delay: 0.2s; }
+.slide.active .evo-stage:nth-child(2) { animation-delay: 0.4s; }
+.slide.active .evo-stage:nth-child(3) { animation-delay: 0.6s; }
+
+
+/* ============================================
+   SLIDE 3: 为什么现在？ - 三力汇聚
+   ============================================ */
+
+.converge-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+}
+
+.converge-center {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+.converge-node {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.2), rgba(255, 171, 0, 0.15));
+    border: 3px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    position: relative;
+    box-shadow: 0 0 60px rgba(0, 229, 255, 0.3), 0 0 120px rgba(0, 229, 255, 0.1);
+    animation: nodePulse 3s ease-in-out infinite;
+    line-height: 1.3;
+    text-align: center;
+}
+
+.converge-lines {
+    width: 100%;
+    height: 70px;
+    margin-bottom: 0;
+}
+
+.converge-lines svg {
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes nodePulse {
+    0%, 100% {
+        box-shadow: 0 0 40px rgba(0, 229, 255, 0.3), 0 0 80px rgba(0, 229, 255, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 60px rgba(0, 229, 255, 0.5), 0 0 120px rgba(0, 229, 255, 0.2);
+    }
+}
+
+.converge-pillars {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.pillar {
+    flex: 1;
+    max-width: 350px;
+    background: linear-gradient(135deg, rgba(14, 22, 41, 0.6) 0%, rgba(10, 15, 30, 0.3) 100%);
+    border-radius: 20px;
+    padding: 35px 30px;
+    text-align: center;
+    border: 2px solid var(--border-color);
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pillar:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 20px 60px rgba(0, 229, 255, 0.25);
+}
+
+.pillar-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(255, 171, 0, 0.1));
+    border-radius: 16px;
+    border: 1px solid rgba(0, 229, 255, 0.25);
+}
+
+.pillar-icon svg {
+    width: 30px;
+    height: 30px;
+    stroke: var(--accent-color);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.pillar-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-warm));
+    color: #050811;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 15px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.pillar h3 {
+    font-size: 1.6rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.pillar p {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.pillar-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+/* Staggered animations for convergence */
+.slide.active .converge-node {
+    animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    opacity: 0;
+}
+
+.slide.active .converge-lines {
+    animation: fadeInLines 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInLines {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.slide.active .pillar {
+    animation: cardSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+.slide.active .pillar:nth-child(1) { animation-delay: 0.2s; }
+.slide.active .pillar:nth-child(2) { animation-delay: 0.35s; }
+.slide.active .pillar:nth-child(3) { animation-delay: 0.5s; }
+
+
+/* ============================================
+   SLIDE 4: 四大痛点 - 横向编号瀑布流
+   ============================================ */
+
+.pain-layout {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.pain-strip {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+.pain-item {
+    flex: 1;
+    background: linear-gradient(135deg, rgba(14, 22, 41, 0.5) 0%, rgba(10, 15, 30, 0.2) 100%);
+    border-radius: 20px;
+    border: 2px solid var(--border-color);
+    padding: 30px 25px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    display: flex;
+    flex-direction: column;
+}
+
+/* alternating offset for visual rhythm */
+.pain-item:nth-child(even) {
+    margin-top: 40px;
+}
+.pain-item:nth-child(odd) {
+    margin-bottom: 40px;
+}
+
+.pain-item:hover {
+    transform: translateY(-10px);
+    border-color: rgba(255, 100, 100, 0.5);
+    box-shadow: 0 20px 60px rgba(255, 100, 100, 0.15);
+}
+
+.pain-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 4rem;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.04);
+    line-height: 1;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    pointer-events: none;
+    transition: color 0.4s ease;
+}
+
+.pain-item:hover .pain-num {
+    color: rgba(255, 100, 100, 0.1);
+}
+
+.pain-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.pain-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(255, 100, 100, 0.12), rgba(255, 171, 0, 0.08));
+    border-radius: 14px;
+    border: 1px solid rgba(255, 100, 100, 0.2);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.pain-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: #ff6b6b;
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.pain-item:hover .pain-icon {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 8px 20px rgba(255, 100, 100, 0.3);
+}
+
+.pain-body h3 {
+    font-size: 1.5rem;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.pain-body p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.pain-tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(255, 100, 100, 0.08);
+    border: 1px solid rgba(255, 100, 100, 0.2);
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: #ff6b6b;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+    letter-spacing: 0.05em;
+}
+
+/* Staggered animations for pain points */
+.slide.active .pain-item {
+    animation: cardSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+.slide.active .pain-item:nth-child(1) { animation-delay: 0.1s; }
+.slide.active .pain-item:nth-child(2) { animation-delay: 0.2s; }
+.slide.active .pain-item:nth-child(3) { animation-delay: 0.3s; }
+.slide.active .pain-item:nth-child(4) { animation-delay: 0.4s; }
+
+
+/* ============================================
+   SLIDE 5: 解决方案 - 痛点→方案映射卡片
+   ============================================ */
+
+.solution-overview-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.solution-tagline {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.tagline-badge {
+    display: inline-block;
+    padding: 6px 18px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-warm));
+    color: #050811;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.solution-tagline h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+.solution-cards-v2 {
+    display: flex;
+    gap: 30px;
+    flex: 1;
+}
+
+.sol-card {
+    flex: 1;
+    background: linear-gradient(180deg, rgba(14, 22, 41, 0.7) 0%, rgba(10, 15, 30, 0.3) 100%);
+    border-radius: 20px;
+    padding: 35px 30px;
+    border: 2px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sol-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), var(--accent-warm));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sol-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-color);
+    box-shadow: 0 25px 60px rgba(0, 229, 255, 0.25);
+}
+
+.sol-card:hover::after {
+    transform: scaleX(1);
+}
+
+.sol-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.sol-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 3.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-warm));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+}
+
+.sol-icon-wrap {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(255, 171, 0, 0.1));
+    border-radius: 14px;
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    transition: all 0.3s ease;
+}
+
+.sol-icon-wrap svg {
+    width: 28px;
+    height: 28px;
+    stroke: var(--accent-color);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.sol-card:hover .sol-icon-wrap {
+    transform: rotate(5deg) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 229, 255, 0.4);
+}
+
+.sol-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.sol-card-subtitle {
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 18px;
+    letter-spacing: 0.03em;
+}
+
+.sol-card-desc {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    flex: 1;
+}
+
+.sol-card-tag {
+    margin-top: 25px;
+    padding: 14px 18px;
+    background: rgba(0, 229, 255, 0.06);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 229, 255, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.tag-pain {
+    font-size: 0.85rem;
+    color: #ff6b6b;
+    font-weight: 600;
+    padding: 4px 12px;
+    background: rgba(255, 100, 100, 0.1);
+    border-radius: 6px;
+    text-decoration: line-through;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.tag-arrow {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+}
+
+.tag-fix {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 700;
+    padding: 4px 12px;
+    background: rgba(0, 229, 255, 0.1);
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+/* Staggered animations for solution cards */
+.slide.active .sol-card {
+    animation: cardSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+.slide.active .sol-card:nth-child(1) { animation-delay: 0.15s; }
+.slide.active .sol-card:nth-child(2) { animation-delay: 0.3s; }
+.slide.active .sol-card:nth-child(3) { animation-delay: 0.45s; }
+
+
+/* ============================================
+   SLIDE 6: 为什么选我们 - VS 对决布局
+   ============================================ */
+
+.versus-layout {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.versus-columns {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    align-items: stretch;
+}
+
+.versus-col {
+    flex: 1;
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.versus-them {
+    background: linear-gradient(135deg, rgba(255, 60, 60, 0.06) 0%, rgba(14, 22, 41, 0.3) 100%);
+    border: 2px solid rgba(255, 100, 100, 0.15);
+    border-radius: 20px 0 0 20px;
+}
+
+.versus-us {
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(14, 22, 41, 0.3) 100%);
+    border: 2px solid rgba(0, 229, 255, 0.2);
+    border-radius: 0 20px 20px 0;
+}
+
+.versus-header {
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.06);
+}
+
+.versus-them .versus-header {
+    border-bottom-color: rgba(255, 100, 100, 0.15);
+}
+
+.versus-us .versus-header {
+    border-bottom-color: rgba(0, 229, 255, 0.15);
+}
+
+.versus-label {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+
+.versus-them .versus-label {
+    color: var(--text-secondary);
+}
+
+.versus-us .versus-label {
+    color: var(--accent-color);
+}
+
+.versus-items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    flex: 1;
+}
+
+.versus-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 20px;
+    border-radius: 14px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.versus-them .versus-row {
+    background: rgba(255, 100, 100, 0.04);
+    border: 1px solid transparent;
+}
+
+.versus-us .versus-row {
+    background: rgba(0, 229, 255, 0.04);
+    border: 1px solid transparent;
+}
+
+.versus-them .versus-row:hover {
+    background: rgba(255, 100, 100, 0.08);
+    border-color: rgba(255, 100, 100, 0.15);
+}
+
+.versus-us .versus-row:hover {
+    background: rgba(0, 229, 255, 0.08);
+    border-color: rgba(0, 229, 255, 0.2);
+    transform: translateX(8px);
+}
+
+.versus-mark {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+}
+
+.versus-mark svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.versus-mark.bad {
+    background: rgba(255, 100, 100, 0.15);
+    border: 2px solid rgba(255, 100, 100, 0.3);
+}
+
+.versus-mark.bad svg {
+    stroke: #ff6b6b;
+}
+
+.versus-mark.good {
+    background: rgba(0, 229, 255, 0.15);
+    border: 2px solid rgba(0, 229, 255, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 229, 255, 0.3);
+}
+
+.versus-mark.good svg {
+    stroke: var(--accent-color);
+}
+
+.versus-text {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.versus-text strong {
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.versus-text span {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.versus-divider {
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.versus-divider::before {
+    content: '';
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    left: 50%;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 80%, transparent);
+    transform: translateX(-50%);
+}
+
+.versus-vs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 100, 100, 0.2), rgba(0, 229, 255, 0.2));
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+    z-index: 1;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Staggered animations for versus layout */
+.slide.active .versus-them {
+    animation: slideInFromLeft 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    opacity: 0;
+}
+
+.slide.active .versus-us {
+    animation: slideInFromRight 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+    opacity: 0;
+}
+
+.slide.active .versus-vs {
+    animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    opacity: 0;
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide.active .versus-row {
+    animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.slide.active .versus-them .versus-row:nth-child(1),
+.slide.active .versus-us .versus-row:nth-child(1) { animation-delay: 0.3s; }
+.slide.active .versus-them .versus-row:nth-child(2),
+.slide.active .versus-us .versus-row:nth-child(2) { animation-delay: 0.45s; }
+.slide.active .versus-them .versus-row:nth-child(3),
+.slide.active .versus-us .versus-row:nth-child(3) { animation-delay: 0.6s; }
+.slide.active .versus-them .versus-row:nth-child(4),
+.slide.active .versus-us .versus-row:nth-child(4) { animation-delay: 0.75s; }
+
 
 /* ============================================
    SLIDE 11: 核心业务价值 - 价值矩阵布局
@@ -1721,5 +2660,91 @@ body::before {
 
     .price-amount {
         font-size: 2.2rem;
+    }
+
+    /* Slides 2-4 responsive */
+    .market-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .market-quote p {
+        font-size: 1.6rem;
+    }
+
+    .market-quote-highlight {
+        font-size: 2rem !important;
+    }
+
+    .converge-pillars {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .pillar::before {
+        display: none;
+    }
+
+    .converge-center {
+        margin-bottom: 30px;
+    }
+
+    .converge-lines {
+        display: none;
+    }
+
+    .converge-node {
+        width: 90px;
+        height: 90px;
+        font-size: 1.2rem;
+    }
+
+    .pain-strip {
+        flex-direction: column;
+    }
+
+    .pain-item:nth-child(even) {
+        margin-top: 0;
+    }
+    .pain-item:nth-child(odd) {
+        margin-bottom: 0;
+    }
+
+    /* Slide 5 & 6 responsive */
+    .solution-cards-v2 {
+        flex-direction: column;
+    }
+
+    .sol-card-top .sol-number {
+        font-size: 2.5rem;
+    }
+
+    .versus-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .versus-them,
+    .versus-us {
+        border-radius: 20px;
+    }
+
+    .versus-col {
+        padding: 25px;
+    }
+
+    .versus-divider {
+        width: 100%;
+        height: 50px;
+    }
+
+    .versus-divider::before {
+        top: 50%;
+        left: 10%;
+        right: 10%;
+        bottom: auto;
+        width: auto;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
     }
 }
