@@ -474,6 +474,21 @@ body {
     color: var(--text-secondary);
 }
 
+.ai-credits {
+    position: absolute;
+    bottom: 40px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    color: var(--text-secondary);
+    text-align: center;
+    width: 100%;
+}
+
+.ai-credits a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
 /* Controls */
 .controls {
     position: fixed;
