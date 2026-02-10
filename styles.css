@@ -90,6 +90,18 @@ body::before {
     z-index: 2;
 }
 
+.ai-credits {
+    margin-top: 30px;
+    font-size: 0.95rem; /* Increased size */
+    color: var(--text-secondary);
+    opacity: 0.8; /* Increased visibility */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
 /* Common Background Style for All Slides - Updated to multi-layered tech aesthetic */
 .slide::before {
     content: '';
@@ -267,6 +279,9 @@ body::before {
 .contact-email span {
     font-family: 'JetBrains Mono', monospace;
     letter-spacing: 0.05em;
+    line-height: 1; /* Reset line-height to fix vertical alignment */
+    display: block; /* Ensure block-level behavior for alignment */
+    padding-top: 2px; /* Visual optical alignment */
 }
 
 /* Standard Slide Layout */
@@ -1072,17 +1087,7 @@ body::before {
     color: var(--text-secondary);
 }
 
-.ai-credits {
-    position: absolute;
-    bottom: 35px;
-    font-size: 0.75rem;
-    opacity: 0.6;
-    color: var(--text-secondary);
-    text-align: center;
-    width: 100%;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.02em;
-}
+
 
 .ai-credits a {
     color: var(--accent-color);
