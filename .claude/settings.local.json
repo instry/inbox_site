@@ -12,7 +12,8 @@
       "Bash(__NEW_LINE_dc4d5ae3a47bd627__ python3 create_bp_pdf_simple.py)",
       "Bash(md5:*)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(open:*)"
     ]
   }
 }
