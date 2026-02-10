@@ -30,9 +30,9 @@
 
 ### 1.4 它与普通 AI（如 ChatGPT）有什么不同？ (Differentiation)
 
-很多企业不敢用 ChatGPT 处理核心业务，因为怕数据外流或 AI 产生“幻觉”。InBox 通过以下手段解决了这些问题： 
+很多企业不敢用 ChatGPT 处理核心业务，因为怕数据外流或 AI 产生“幻觉”。Instry 通过以下手段解决了这些问题： 
 
-| 特性 (Feature) | 普通大模型 (Standard LLM) | InBox (我们的方案) |
+| 特性 (Feature) | 普通大模型 (Standard LLM) | Instry (我们的方案) |
 | --- | --- | --- |
 | **数据安全性 (Data Security)** | 数据可能被用于二次训练 | **严格的权限隔离**，财务部的数据 AI 绝不会给销售看 |
 | **准确性 (Accuracy)** | 容易产生“幻觉”（编造事实） | 基于 **Ontology (本体) 架构**，AI 必须根据真实的业务规则回答 |
@@ -102,8 +102,8 @@
 *   **专业版 (Enterprise)：** 4x+ Mac Studio (M3 Ultra 集群) —— 适合中大型制造/研发企业。
 *   **特性：** 预装环境，静音运行，无需专用机房，插电即用。
 
-### 4.2 系统层：InBox 企业版 (InBox Enterprise)
-*   **InBox：** **具备长期记忆、任务编排、工具自主调度**能力的“数字员工”。
+### 4.2 系统层：Instry 企业版 (Instry Enterprise)
+*   **Instry：** **具备长期记忆、任务编排、工具自主调度**能力的“数字员工”。
 *   **企业增强组件 (Enterprise Add-ons)：**
     *   **连接器 (Connectors)：** 预置 50+ 企业接口（企微、钉钉、飞书、用友、SAP、GitLab 等），开箱即连。
     *   **安全网关 (Security Guard)：** 内置敏感词过滤、PII 自动脱敏、基于角色的访问控制 (RBAC)，确保合规。
@@ -129,7 +129,7 @@
 
 ### 5.1 硬件与基础软件销售 (One-time Purchase)
 *   **AI 一体机硬件销售：** 包含 Mac Studio 集群硬件成本及系统预装费用。
-*   **InBox 企业版授权：** 包含核心系统的永久使用权（Perpetual License），让企业真正拥有资产。
+*   **Instry 企业版授权：** 包含核心系统的永久使用权（Perpetual License），让企业真正拥有资产。
 
 ### 5.2 软件订阅服务 (SaaS / Annual Subscription)
 *   **模型与 Skill 升级包：** 按年收取订阅费。提供最新的LLM，以及通用 Skill 库的功能迭代。
