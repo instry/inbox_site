@@ -406,15 +406,13 @@
                 <div class="scene-left">
                     <div class="scene-capability">
                         <span class="cap-badge">核心能力</span>
-                        <span class="cap-text">跨应用执行 + 浏览器自动化</span>
+                        <span class="cap-text">浏览器自动化</span>
                     </div>
-                    <div class="scene-desc">
-                        <p>员工通过企微像发消息一样下达指令，Agent 自动调取历史偏好，完成从订票到接送的全流程安排。</p>
-                    </div>
+                    <h3 class="scene-headline">一句话下单<br>全流程接管</h3>
                     <ul class="scene-features">
-                        <li><strong>全流程接管：</strong>实时监控航班，延误时主动改签，同步调整酒店与接送</li>
-                        <li><strong>长期记忆：</strong>自动记住"不住一楼"、"只要靠窗"等偏好，无需重复交代</li>
-                        <li><strong>自然交互：</strong>"下周去上海，按老规矩办"——像给同事发消息一样简单</li>
+                        <li><strong>智能记忆</strong>自动调取偏好</li>
+                        <li><strong>主动执行</strong>延误自动改签</li>
+                        <li><strong>自然交互</strong>像对话一样简单</li>
                     </ul>
                 </div>
                 <div class="scene-right">
@@ -425,21 +423,83 @@
                                     <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
                                 </div>
                                 <span>企业微信 · Instry Agent</span>
+                                <div class="anim-chat-status">在线</div>
                             </div>
                             <div class="anim-chat-body">
-                                <div class="chat-bubble user anim-msg-1">下周去上海，按老规矩办</div>
-                                <div class="chat-bubble bot anim-msg-2">
-                                    <div class="typing-indicator"><span></span><span></span><span></span></div>
-                                    <div class="typed-text">好的，已为您安排：</div>
+                                <!-- Msg 1: User Request -->
+                                <div class="chat-row user anim-msg-1">
+                                    <div class="chat-avatar-small">
+                                        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle><path d="M12 11v3"></path><path d="M12 14l2 3h-4l2-3"></path></svg>
+                                    </div>
+                                    <div class="chat-bubble user">下周去上海出差，按老规矩办</div>
                                 </div>
-                                <div class="chat-bubble bot task-list anim-msg-3">
-                                    <div class="task-check done"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> 周一 MU5108 靠窗座 已出票</div>
-                                    <div class="task-check done"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> 外滩酒店 高层靠窗房 已预订</div>
-                                    <div class="task-check progress"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> 接送机安排中...</div>
+                                
+                                <!-- Msg 2: Bot Processing -->
+                                <div class="chat-row bot anim-msg-2">
+                                    <div class="chat-avatar-small">
+                                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                    </div>
+                                    <div class="chat-bubble bot">
+                                        <div class="typing-indicator"><span></span><span></span><span></span></div>
+                                        <div class="typed-text">收到！正在调取您的出行偏好...</div>
+                                    </div>
                                 </div>
-                                <div class="chat-bubble bot alert anim-msg-4">
-                                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
-                                    <span>检测到 MU5108 延误2h，已自动改签 MU5112，酒店已同步调整</span>
+
+                                <!-- Msg 3: Memory Card -->
+                                <div class="chat-row bot anim-msg-3">
+                                    <div class="chat-avatar-small">
+                                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                    </div>
+                                    <div class="chat-bubble bot memory-card">
+                                        <div class="memory-title">
+                                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                                            记忆调取
+                                        </div>
+                                        <div class="memory-items">
+                                            <span>靠窗座位</span>
+                                            <span>高层房间</span>
+                                            <span>不住一楼</span>
+                                            <span>专车接送</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Msg 4: Execution List -->
+                                <div class="chat-row bot anim-msg-4">
+                                    <div class="chat-avatar-small">
+                                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                    </div>
+                                    <div class="chat-bubble bot task-list">
+                                        <div class="task-check done"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> MU5108 靠窗座 · 已出票</div>
+                                        <div class="task-check done"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> 外滩酒店 28F 靠窗房 · 已预订</div>
+                                        <div class="task-check done"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg> 浦东机场接机 · 已安排</div>
+                                    </div>
+                                </div>
+
+                                <div class="chat-time-sep anim-msg-5">—— 出发当天 08:30 ——</div>
+
+                                <!-- Msg 6: Alert -->
+                                <div class="chat-row bot anim-msg-6">
+                                    <div class="chat-avatar-small">
+                                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                    </div>
+                                    <div class="chat-bubble bot alert">
+                                        <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                        <div class="alert-content">
+                                            <strong>航班异常预警</strong>
+                                            <span>MU5108 延误 2 小时，已自动改签 MU5112（10:30起飞），酒店入住和接机时间已同步调整。</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Msg 7: Final Report -->
+                                <div class="chat-row bot anim-msg-8">
+                                    <div class="chat-avatar-small">
+                                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                    </div>
+                                    <div class="chat-bubble bot">
+                                        <div class="typed-text">已生成更新后的行程单 ✓</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -906,7 +966,7 @@
                     </a>
                     <div class="ai-credits">
                         <p>本演示使用纯AI+代码实现 (Claude + Gemini)</p>
-                        <p>源码地址：<a href="https://github.com/instry/inbox_site" target="_blank">github.com/instry/inbox_site</a></p>
+                        <p>源码地址：<a href="https://github.com/instry/Instry_site" target="_blank">github.com/instry/Instry_site</a></p>
                     </div>
                 </div>
             </div>

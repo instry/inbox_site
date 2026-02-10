@@ -2175,20 +2175,35 @@ body::before {
 
 .scene-flex {
     display: flex;
-    gap: 45px;
-    align-items: stretch;
+    gap: 80px; /* Increased to avoid being too cramped, balanced spacing */
+    align-items: center;
     height: 100%;
+    max-width: 1400px; /* Increased max-width */
+    margin: 0 auto;
 }
 
 .scene-left {
-    flex: 1;
+    flex: 1; /* Allow flexible width */
+    min-width: 400px; /* Ensure minimum readability */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .scene-left .scene-capability {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.scene-headline {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin-bottom: 35px;
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .scene-desc {
@@ -2196,7 +2211,7 @@ body::before {
 }
 
 .scene-desc p {
-    font-size: 1.1rem;
+    font-size: 1.25rem; /* Increased */
     color: var(--text-secondary);
     line-height: 1.7;
 }
@@ -2205,14 +2220,14 @@ body::before {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 24px; /* Increased gap */
 }
 
 .scene-features li {
-    font-size: 1rem;
-    color: var(--text-primary);
+    font-size: 1.25rem; /* Increased */
+    color: var(--text-secondary);
     line-height: 1.6;
-    padding-left: 28px;
+    padding-left: 32px;
     position: relative;
 }
 
@@ -2220,9 +2235,9 @@ body::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 8px;
-    width: 14px;
-    height: 14px;
+    top: 10px;
+    width: 16px; /* Increased size */
+    height: 16px; /* Increased size */
     background: linear-gradient(135deg, var(--accent-color), var(--accent-warm));
     border-radius: 50%;
     box-shadow: 0 2px 8px rgba(0, 229, 255, 0.35);
@@ -2231,34 +2246,42 @@ body::before {
 .scene-features li strong {
     color: var(--accent-color);
     font-weight: 700;
+    font-size: 1.35rem; /* Increased */
+    display: block;
+    margin-bottom: 4px;
 }
 
 .scene-right {
     flex: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end; /* Align to right */
+    padding-right: 20px; /* Add padding to prevent cut-off */
 }
 
 /* --- Slide 7: Chat Demo Animation --- */
 .anim-chat-demo {
     width: 100%;
-    max-width: 420px;
+    max-width: 400px; /* Reduced width */
+    transform-origin: center right;
 }
 
 .anim-chat-window {
-    background: linear-gradient(135deg, rgba(14, 22, 41, 0.8), rgba(10, 15, 30, 0.5));
+    background: linear-gradient(135deg, rgba(14, 22, 41, 0.95), rgba(10, 15, 30, 0.9));
     border: 2px solid var(--border-color);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    /* Removed max-height and overflow-y to prevent scrollbar */
+    display: flex;
+    flex-direction: column;
 }
 
 .anim-chat-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 16px 20px;
+    padding: 14px 20px; /* Slightly reduced padding */
     background: rgba(0, 229, 255, 0.06);
     border-bottom: 1px solid var(--border-color);
 }
@@ -2288,36 +2311,95 @@ body::before {
     color: var(--text-secondary);
     font-family: 'JetBrains Mono', monospace;
     font-weight: 500;
+    flex: 1;
+}
+
+.anim-chat-status {
+    padding: 3px 10px;
+    background: rgba(74, 222, 128, 0.15);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    border-radius: 12px;
+    font-size: 0.7rem;
+    color: #4ade80;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 .anim-chat-body {
-    padding: 20px;
+    padding: 14px; /* Slightly reduced padding */
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px; /* Reduced gap from 12px */
+    /* Removed overflow-y to prevent scrollbar */
 }
+
+/* Chat Row Layout for Avatars */
+.chat-row {
+    display: flex;
+    gap: 10px; /* Reduced gap from 12px */
+    align-items: flex-start;
+    margin-bottom: 8px; /* Reduced margin from 16px */
+    max-width: 100%;
+}
+
+.chat-row.user {
+    flex-direction: row-reverse;
+}
+
+.chat-avatar-small {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.chat-row.bot .chat-avatar-small {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-warm));
+}
+
+.chat-row.user .chat-avatar-small {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chat-avatar-small svg {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    fill: none;
+}
+
+.chat-row.bot .chat-avatar-small svg { stroke: #050811; }
+.chat-row.user .chat-avatar-small svg { stroke: var(--text-secondary); }
 
 .chat-bubble {
     padding: 12px 16px;
-    border-radius: 14px;
+    border-radius: 16px;
     font-size: 0.9rem;
     line-height: 1.5;
-    max-width: 88%;
+    max-width: calc(100% - 44px); /* Subtract avatar width + gap */
+    position: relative;
 }
 
 .chat-bubble.user {
     background: rgba(255, 255, 255, 0.08);
     color: var(--text-primary);
-    border-bottom-right-radius: 4px;
-    align-self: flex-end;
+    border-top-right-radius: 4px; /* Changed from bottom-right */
+    /* Remove align-self */
 }
 
 .chat-bubble.bot {
     background: linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(0, 184, 212, 0.08));
     border: 1px solid rgba(0, 229, 255, 0.2);
     color: var(--text-primary);
-    border-bottom-left-radius: 4px;
-    align-self: flex-start;
+    border-top-left-radius: 4px; /* Changed from bottom-left */
+    /* Remove align-self */
 }
 
 .chat-bubble.bot .typed-text {
@@ -2406,11 +2488,92 @@ body::before {
     line-height: 1.5;
 }
 
+/* Memory card */
+.chat-bubble.memory-card {
+    background: linear-gradient(135deg, rgba(0, 229, 255, 0.06), rgba(14, 22, 41, 0.5));
+    border: 1px solid rgba(0, 229, 255, 0.18);
+    padding: 14px 16px;
+}
+
+.memory-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent-color);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+}
+
+.memory-title svg {
+    width: 15px;
+    height: 15px;
+    stroke: var(--accent-color);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.memory-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.memory-items span {
+    padding: 4px 12px;
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 20px;
+    font-size: 0.78rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Alert with structured content */
+.alert-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.alert-content strong {
+    font-size: 0.82rem;
+    color: var(--accent-warm);
+    font-weight: 700;
+}
+
+.alert-content span {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Time separator */
+.chat-time-sep {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-secondary);
+    opacity: 0.6;
+    padding: 6px 0;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+}
+
 /* Staggered chat animation */
-.slide.active .anim-msg-1 { animation: slideInFromRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
-.slide.active .anim-msg-2 { animation: slideInFromLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards; opacity: 0; }
-.slide.active .anim-msg-3 { animation: slideInFromLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.2s forwards; opacity: 0; }
-.slide.active .anim-msg-4 { animation: slideInFromLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.8s forwards; opacity: 0; }
+.slide.active .anim-msg-1 { animation: slideInFromRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards; opacity: 0; }
+.slide.active .anim-msg-2 { animation: slideInFromLeft 0.45s cubic-bezier(0.16, 1, 0.3, 1) 0.6s forwards; opacity: 0; }
+.slide.active .anim-msg-3 { animation: slideInFromLeft 0.45s cubic-bezier(0.16, 1, 0.3, 1) 1.0s forwards; opacity: 0; }
+.slide.active .anim-msg-4 { animation: slideInFromLeft 0.45s cubic-bezier(0.16, 1, 0.3, 1) 1.4s forwards; opacity: 0; }
+.slide.active .anim-msg-5 { animation: fadeInUp 0.35s ease 1.9s forwards; opacity: 0; }
+.slide.active .anim-msg-6 { animation: slideInFromLeft 0.45s cubic-bezier(0.16, 1, 0.3, 1) 2.2s forwards; opacity: 0; }
+.slide.active .anim-msg-7 { animation: slideInFromRight 0.45s cubic-bezier(0.16, 1, 0.3, 1) 2.8s forwards; opacity: 0; }
+.slide.active .anim-msg-8 { animation: slideInFromLeft 0.45s cubic-bezier(0.16, 1, 0.3, 1) 3.2s forwards; opacity: 0; }
 
 @keyframes slideInFromRight {
     from { opacity: 0; transform: translateX(30px); }
