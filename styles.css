@@ -192,15 +192,13 @@ body {
     position: relative;
     padding-left: 40px;
 }
-
 .bullet-points li::before {
-    content: "•";
+    content: ""; /* Remove bullet point */
     color: var(--accent-color);
     position: absolute;
     left: 0;
-}
-
-/* Grid Layouts */
+    font-weight: bold;
+}/* Grid Layouts */
 .grid-2x2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
